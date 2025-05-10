@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Entry Form</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffcc00;
+        }
+
+        .form-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #444;
+        }
+
+        th {
+            background-color: #0a0000;
+        }
+
+        input[type="date"], input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #cccccc;
+            background-color: #222;
+            color: white;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #ffcc00;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e6b800;
+        }
+
+        .entry-table-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #070000;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Headings Example</title>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB2h2abgrF-d72d-Ugq1LMDinNYLJmGHqiyg&s" alt="Company Logo">
+
+    <nav>
+            <h1><a href="#AccountingDefinitions">Accounting Definitions</a></h1>
+        <h1><a href="#Double-Entry">Double-Entry</a></h1>
+     
+        <h1><a href="#ComponentsofFinancialStatements">Components of Financial Statements</a></h1>
+        <h1><a href="#reviewsSection">Reviews</a></h1>
+        <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us Example</title>
+</head>
+<body>
+  <h1><a href="#contact">Contact Us</a></h1>
+    </nav>
+
+   
+
+    
+
+</body>
+</html>
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal Entry Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    .form-container {
+      margin-bottom: 20px;
+    }
+    .form-container label {
+      margin-right: 10px;
+    }
+    .form-container input {
+      padding: 5px;
+      margin: 5px;
+    }
+    .row {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Journal Entry Form</h2>
+
+  <!-- Form for entering date, description, debit, and credit -->
+  <div class="form-container">
+    <form id="entryForm">
+      <!-- Row for Date -->
+      <div class="row">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <!-- Row for Description -->
+      <div class="row">
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+      </div>
+
+      <!-- Row for Debit -->
+      <div class="row">
+        <label for="debit">Debit:</label>
+        <input type="number" id="debit" name="debit" step="0.01" required>
+      </div>
+
+      <!-- Row for Credit -->
+      <div class="row">
+        <label for="credit">Credit:</label>
+        <input type="number" id="credit" name="credit" step="0.01" required>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Journal Table -->
+  <h2>Journal Entries</h2>
+  <table id="journalTable">
+    <thead>
+      <tr>
+        <th style="color: black;">Date</th>
+        <th style="color: black;">Description</th>
+        <th style="color: black;">Debit</th>
+        <th style="color: black;">Credit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Entries will appear here -->
+    </tbody>
+  </table>
+
+  <script>
+    // JavaScript to handle form submission and display entries in the journal
+    document.getElementById('entryForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting and refreshing the page
+
+      // Get form values
+      const date = document.getElementById('date').value;
+      const description = document.getElementById('description').value;
+      const debit = document.getElementById('debit').value;
+      const credit = document.getElementById('credit').value;
+
+      // Create a new row for the journal
+      const table = document.getElementById('journalTable').getElementsByTagName('tbody')[0];
+      const newRow = table.insertRow();
+
+      // Insert new cells and add the form values to the row
+      const cell1 = newRow.insertCell(0);
+      const cell2 = newRow.insertCell(1);
+      const cell3 = newRow.insertCell(2);
+      const cell4 = newRow.insertCell(3);
+
+      cell1.textContent = date;
+      cell2.textContent = description;
+      cell3.textContent = debit;
+      cell4.textContent = credit;
+
+      // Clear the form inputs after submission
+      document.getElementById('entryForm').reset();
+    });
+  </script>
+
+</body>
+</html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage with Logo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Styling the logo */
+        .logo {
+            max-width: 200px; /* Adjust the width to suit your design */
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Image -->
+    <img src="https://riphah.edu.pk/wp-content/uploads/2023/07/Group-369.png" alt="Website Logo" class="logo">
+
+</body>
+</html>
+<h2 id="AccountingDefinitions"></h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting Definitions and Entries</title>
+</head>
+<body>
+
+    <h1>Accounting Definitions and Entries</h1>
+
+    <section>
+        <h2>1. Assets</h2>
+        <p><strong>Definition:</strong> Assets are resources owned by a business that are expected to provide future economic benefits. Examples include cash, accounts receivable, and property.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Debit: Asset account (e.g., Cash)
+            Credit: Liability or Equity account
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>2. Liabilities</h2>
+        <p><strong>Definition:</strong> Liabilities are financial obligations or debts that a business must pay in the future, such as loans or accounts payable.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Debit: Liability account (e.g., Accounts Payable)
+            Credit: Asset or Expense account
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>3. Revenue</h2>
+        <p><strong>Definition:</strong> Revenue is the income generated from normal business activities, such as sales of goods or services.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Debit: Accounts Receivable (or Cash)
+            Credit: Revenue account (e.g., Sales Revenue)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>4. Expenses</h2>
+        <p><strong>Definition:</strong> Expenses are the costs incurred by a business in the process of earning revenue. These include rent, utilities, wages, and materials used in production.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Debit: Expense account (e.g., Rent Expense)
+            Credit: Liability or Asset account (e.g., Accounts Payable)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>5. Equity</h2>
+        <p><strong>Definition:</strong> Equity represents the owner's interest in the business, calculated as total assets minus total liabilities. It includes owner investments and retained earnings.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Debit: Equity account (e.g., Owner's Capital)
+            Credit: Asset or Revenue account
+            </pre>
+        </p>
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double-Entry Accounting Definitions and Entries</title>
+</head>
+<body>
+    <h2 id="Double-Entry"></h2>
+    <h1>Double-Entry Accounting Definitions and Entries</h1>
+
+    <section>
+        <h2>1. Purchase of Equipment with Cash</h2>
+        <p><strong>Definition:</strong> When a business purchases equipment, it increases its assets (equipment) and decreases its assets (cash).</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Equipment (Asset)
+            Cr: Cash (Asset)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>2. Sales on Credit</h2>
+        <p><strong>Definition:</strong> When a business sells goods on credit, it increases its assets (accounts receivable) and recognizes revenue (sales).</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Accounts Receivable (Asset)
+            Cr: Sales Revenue (Revenue)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>3. Payment of Expenses (e.g., Rent)</h2>
+        <p><strong>Definition:</strong> When a business pays for rent, it reduces its assets (cash) and increases its expenses (rent expense).</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Rent Expense (Expense)
+            Cr: Cash (Asset)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>4. Owner Investment in the Business</h2>
+        <p><strong>Definition:</strong> When an owner invests cash into the business, it increases the business's assets (cash) and the owner's equity (owner's capital).</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Cash (Asset)
+            Cr: Owner's Capital (Equity)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>5. Borrowing Money from a Bank</h2>
+        <p><strong>Definition:</strong> When a business borrows money, it increases its assets (cash) and its liabilities (loan payable).</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Cash (Asset)
+            Cr: Loan Payable (Liability)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>6. Purchase of Goods on Credit</h2>
+        <p><strong>Definition:</strong> When a business buys inventory on credit, it increases its assets (inventory) and increases its liabilities (accounts payable).</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Inventory (Asset)
+            Cr: Accounts Payable (Liability)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>7. Payment of Accounts Payable</h2>
+        <p><strong>Definition:</strong> When the business pays off a portion of its accounts payable, it decreases both its liabilities (accounts payable) and its assets (cash).</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Accounts Payable (Liability)
+            Cr: Cash (Asset)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>8. Earning Revenue for Services Rendered</h2>
+        <p><strong>Definition:</strong> When a business earns revenue for services provided, it increases its assets (accounts receivable or cash) and increases its revenue.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Accounts Receivable (Asset) or Cash (Asset)
+            Cr: Service Revenue (Revenue)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>9. Depreciation of Equipment</h2>
+        <p><strong>Definition:</strong> Depreciation of equipment is an expense that reduces the value of the asset over time. It increases the expense and reduces the asset’s value.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Depreciation Expense (Expense)
+            Cr: Accumulated Depreciation (Contra-Asset)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>10. Paying Salaries to Employees</h2>
+        <p><strong>Definition:</strong> When a business pays salaries, it reduces its assets (cash) and increases its expenses (salary expense).</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Salary Expense (Expense)
+            Cr: Cash (Asset)
+            </pre>
+        </p>
+    </section>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Double-Entry Accounting Entries</title>
+</head>
+<body>
+
+    <h1>Advanced Double-Entry Accounting Definitions and Entries</h1>
+
+    <section>
+        <h2>1. Accrued Expenses (Wages)</h2>
+        <p><strong>Definition:</strong> When a business accrues wages that have been earned by employees but not yet paid, it creates a liability and an expense.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Wages Expense (Expense)
+            Cr: Wages Payable (Liability)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>2. Prepaid Expenses (Insurance)</h2>
+        <p><strong>Definition:</strong> When a business pays for insurance coverage in advance, it records it as a prepaid asset. Over time, it is expensed as it is used.</p>
+        <p><strong>Accounting Entry (Initial Payment):</strong> 
+            <pre>
+            Dr: Prepaid Insurance (Asset)
+            Cr: Cash (Asset)
+            </pre>
+        </p>
+        <p><strong>Accounting Entry (Expense Recognition):</strong> 
+            <pre>
+            Dr: Insurance Expense (Expense)
+            Cr: Prepaid Insurance (Asset)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>3. Depreciation of Buildings</h2>
+        <p><strong>Definition:</strong> Depreciation is applied to buildings to allocate the cost over time, representing the wear and tear of the asset.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Depreciation Expense (Expense)
+            Cr: Accumulated Depreciation (Contra-Asset)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>4. Accrued Revenue (Services Rendered, Not Yet Billed)</h2>
+        <p><strong>Definition:</strong> Revenue earned but not yet billed is recorded as accrued revenue. The business has performed the service but has not yet invoiced the customer.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Accounts Receivable (Asset)
+            Cr: Service Revenue (Revenue)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>5. Loan Interest Accrual</h2>
+        <p><strong>Definition:</strong> When a business accrues interest on a loan but has not yet paid it, the expense is recognized, and a liability is created.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Interest Expense (Expense)
+            Cr: Interest Payable (Liability)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>6. Inventory Write-Down (Lower of Cost or Market)</h2>
+        <p><strong>Definition:</strong> If inventory has lost value and is written down to reflect its current market value, the inventory asset decreases, and an expense is recorded.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Loss on Inventory Write-Down (Expense)
+            Cr: Inventory (Asset)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>7. Unearned Revenue (Payment Received in Advance)</h2>
+        <p><strong>Definition:</strong> When a business receives payment in advance for services to be provided in the future, it creates a liability (unearned revenue).</p>
+        <p><strong>Accounting Entry (Initial Payment):</strong> 
+            <pre>
+            Dr: Cash (Asset)
+            Cr: Unearned Revenue (Liability)
+            </pre>
+        </p>
+        <p><strong>Accounting Entry (Revenue Recognition):</strong> 
+            <pre>
+            Dr: Unearned Revenue (Liability)
+            Cr: Service Revenue (Revenue)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>8. Sale of Equipment at a Loss</h2>
+        <p><strong>Definition:</strong> When equipment is sold for less than its book value, the business records a loss on the sale. The asset is removed, and a loss is recognized.</p>
+        <p><strong>Accounting Entry (Sale of Equipment):</strong> 
+            <pre>
+            Dr: Cash (Asset)
+            Dr: Accumulated Depreciation (Contra-Asset)
+            Dr: Loss on Sale of Equipment (Expense)
+            Cr: Equipment (Asset)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>9. Issuance of Bonds Payable</h2>
+        <p><strong>Definition:</strong> When a business issues bonds to raise funds, it receives cash and creates a liability for the future repayment of the bond principal.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Cash (Asset)
+            Cr: Bonds Payable (Liability)
+            </pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>10. Conversion of Debt to Equity (Debt-Equity Swap)</h2>
+        <p><strong>Definition:</strong> When a business converts outstanding debt into equity, it reduces its liabilities and increases its equity capital.</p>
+        <p><strong>Accounting Entry:</strong> 
+            <pre>
+            Dr: Bonds Payable (Liability)
+            Cr: Common Stock (Equity)
+            Cr: Additional Paid-in Capital (Equity)
+            </pre>
+        </p>
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components of Financial Statements</title>
+</head>
+<body>
+    <h2 id="ComponentsofFinancialStatements">Components of Financial Statements</h2>
+       <h1>5 Components of Financial Statements</h1>
+
+    <section>
+        <h2>1. Income Statement</h2>
+        <p><strong>Definition:</strong> The income statement (also known as the profit and loss statement) shows a company's revenue, expenses, and profits over a period of time. It is used to measure the financial performance of a business.</p>
+        <p><strong>Key Elements:</strong>
+            <ul>
+                <li>Revenue</li>
+                <li>Cost of Goods Sold (COGS)</li>
+                <li>Operating Expenses</li>
+                <li>Net Income</li>
+            </ul>
+        </p>
+    </section>
+
+    <section>
+        <h2>2. Balance Sheet</h2>
+        <p><strong>Definition:</strong> The balance sheet provides a snapshot of a company's assets, liabilities, and equity at a specific point in time. It helps assess the financial position of the business.</p>
+        <p><strong>Key Elements:</strong>
+            <ul>
+                <li>Assets (Current and Non-Current)</li>
+                <li>Liabilities (Current and Non-Current)</li>
+                <li>Shareholders' Equity</li>
+            </ul>
+        </p>
+    </section>
+
+    <section>
+        <h2>3. Cash Flow Statement</h2>
+        <p><strong>Definition:</strong> The cash flow statement tracks the flow of cash in and out of the business over a period of time. It is divided into three sections: operating, investing, and financing activities.</p>
+        <p><strong>Key Elements:</strong>
+            <ul>
+                <li>Operating Activities (e.g., cash from sales, cash paid for expenses)</li>
+                <li>Investing Activities (e.g., purchase or sale of assets)</li>
+                <li>Financing Activities (e.g., debt issuance or dividend payments)</li>
+            </ul>
+        </p>
+    </section>
+
+    <section>
+        <h2>4. Statement of Changes in Equity</h2>
+        <p><strong>Definition:</strong> This statement shows the changes in equity during a specific period. It includes information such as new investments, retained earnings, dividends, and other adjustments.</p>
+        <p><strong>Key Elements:</strong>
+            <ul>
+                <li>Beginning Equity</li>
+                <li>Net Income or Loss</li>
+                <li>Dividends</li>
+                <li>Issuance or Repurchase of Stock</li>
+                <li>Retained Earnings</li>
+            </ul>
+        </p>
+    </section>
+
+    <section>
+        <h2>5. Notes to Financial Statements</h2>
+        <p><strong>Definition:</strong> The notes to financial statements provide additional details and explanations about the numbers presented in the financial statements. They may include accounting policies, contingent liabilities, or details about specific transactions.</p>
+        <p><strong>Key Elements:</strong>
+            <ul>
+                <li>Accounting Policies</li>
+                <li>Contingent Liabilities</li>
+                <li>Breakdown of Specific Items (e.g., breakdown of debt, depreciation methods)</li>
+            </ul>
+        </p>
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Different Names of SOCI and SOFP</title>
+</head>
+<body>
+
+    <h1>Different Names of SOCI (Statement of Comprehensive Income) and SOFP (Statement of Financial Position)</h1>
+
+    <section>
+        <h2>1. Statement of Comprehensive Income (SOCI)</h2>
+        <p><strong>Definition:</strong> The Statement of Comprehensive Income is a financial statement that summarizes a company's revenues, expenses, and other comprehensive income, providing insight into its performance over a period of time.</p>
+        <p><strong>Other Names for SOCI:</strong></p>
+        <ul>
+            <li><strong>Income Statement</strong>: Commonly used in many countries, especially in the United States. It reports the company's performance, showing revenue, costs, and profit over a specific period.</li>
+            <li><strong>Profit and Loss Statement (P&L)</strong>: This name is used interchangeably with "Income Statement" in many countries. It focuses on the company's profit or loss during a particular period.</li>
+            <li><strong>Statement of Profit or Loss</strong>: Often used in international accounting practices, particularly under IFRS (International Financial Reporting Standards), to describe the same report.</li>
+            <li><strong>Statement of Earnings</strong>: This term is commonly used in the United States and refers to the comprehensive overview of a company's revenues, expenses, and net income.</li>
+            <li><strong>Statement of Operations</strong>: A term used in some industries and regions to refer to the same document as the Income Statement.</li>
+        </ul>
+        <p><strong>Key Elements in SOCI:</strong>
+            <ul>
+                <li>Revenue</li>
+                <li>Cost of Goods Sold (COGS)</li>
+                <li>Operating Expenses</li>
+                <li>Net Income or Loss</li>
+                <li>Other Comprehensive Income (e.g., foreign currency translation adjustments, unrealized gains or losses on securities)</li>
+            </ul>
+        </p>
+    </section>
+
+    <section>
+        <h2>2. Statement of Financial Position (SOFP)</h2>
+        <p><strong>Definition:</strong> The Statement of Financial Position (SOFP), also known as the Balance Sheet, provides a snapshot of a company's financial position at a specific point in time, listing its assets, liabilities, and equity.</p>
+        <p><strong>Other Names for SOFP:</strong></p>
+        <ul>
+            <li><strong>Balance Sheet</strong>: This is the most common name used in many countries to refer to the Statement of Financial Position. It shows the company's assets, liabilities, and shareholders' equity.</li>
+            <li><strong>Statement of Financial Condition</strong>: A term often used in financial analysis, particularly in the banking and financial industries, to describe the same document as the balance sheet.</li>
+            <li><strong>Statement of Assets, Liabilities, and Equity</strong>: This name is used by some companies and in certain regions to focus on the major sections of the financial position statement.</li>
+            <li><strong>Statement of Financial Status</strong>: A less common term that is occasionally used interchangeably with "Balance Sheet" in some regions or industries.</li>
+            <li><strong>Net Worth Statement</strong>: Used in personal finance or smaller businesses, this term focuses on the difference between assets and liabilities (i.e., equity or net worth).</li>
+        </ul>
+        <p><strong>Key Elements in SOFP:</strong>
+            <ul>
+                <li>Assets (Current and Non-Current)</li>
+                <li>Liabilities (Current and Non-Current)</li>
+                <li>Equity (Shareholder’s Equity or Owner’s Equity)</li>
+                <li>Assets = Liabilities + Equity (The accounting equation)</li>
+            </ul>
+        </p>
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trial Balance, SOCI, and SOFP of Companies</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Company Financial Statements</h1>
+
+    <!-- Trial Balance Section -->
+    <section>
+        <h2>1. Trial Balance</h2>
+        <p><strong>Trial Balance for XYZ Ltd. as of December 31, 2024</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="color: blue;">Account Name</th>
+                    <th style="color: blue;">Debit ($)</th>
+                    <th style="color: blue;">Credit ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cash</td>
+                    <td>20,000</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Accounts Receivable</td>
+                    <td>15,000</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Inventory</td>
+                    <td>12,000</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Accounts Payable</td>
+                    <td></td>
+                    <td>8,000</td>
+                </tr>
+                <tr>
+                    <td>Capital Stock</td>
+                    <td></td>
+                    <td>25,000</td>
+                </tr>
+                <tr>
+                    <td>Revenue</td>
+                    <td></td>
+                    <td>50,000</td>
+                </tr>
+                <tr>
+                    <td>Expenses</td>
+                    <td>30,000</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Retained Earnings</td>
+                    <td></td>
+                    <td>10,000</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th style="color: black;">Total</th>
+                    <th style="color: red;">77,000</th>
+                    <th style="color: red;">77,000</th>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <!-- Statement of Comprehensive Income (SOCI) -->
+    <section>
+        <h2>2. Statement of Comprehensive Income (SOCI)</h2>
+        <p><strong>For the year ended December 31, 2024</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="color: blue;">Description</th>
+                    <th style="color: blue;">Amount ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Revenue</td>
+                    <td>50,000</td>
+                </tr>
+                <tr>
+                    <td>Cost of Goods Sold</td>
+                    <td>(20,000)</td>
+                </tr>
+                <tr>
+                    <td><strong>Gross Profit</strong></td>
+                    <td><strong>30,000</strong></td>
+                </tr>
+                <tr>
+                    <td>Operating Expenses</td>
+                    <td>(10,000)</td>
+                </tr>
+                <tr>
+                    <td><strong>Operating Income</strong></td>
+                    <td><strong>20,000</strong></td>
+                </tr>
+                <tr>
+                    <td>Other Income</td>
+                    <td>2,000</td>
+                </tr>
+                <tr>
+                    <td>Other Expenses</td>
+                    <td>(5,000)</td>
+                </tr>
+                <tr>
+                    <td><strong>Net Income</strong></td>
+                    <td><strong>17,000</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Statement of Financial Position (SOFP) -->
+    <section>
+        <h2>3. Statement of Financial Position (SOFP)</h2>
+        <p><strong>As of December 31, 2024</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="color: blue;">Assets</th>
+                    <th style="color: blue;">Amount ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Current Assets</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Cash</td>
+                    <td>20,000</td>
+                </tr>
+                <tr>
+                    <td>Accounts Receivable</td>
+                    <td>15,000</td>
+                </tr>
+                <tr>
+                    <td>Inventory</td>
+                    <td>12,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Current Assets</strong></td>
+                    <td><strong>47,000</strong></td>
+                </tr>
+                <tr>
+                    <td>Non-Current Assets</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Property, Plant & Equipment</td>
+                    <td>30,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Assets</strong></td>
+                    <td><strong>77,000</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="color: blue;">Liabilities & Equity</th>
+                    <th style="color: blue;">Amount ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Current Liabilities</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Accounts Payable</td>
+                    <td>8,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Current Liabilities</strong></td>
+                    <td><strong>8,000</strong></td>
+                </tr>
+                <tr>
+                    <td>Non-Current Liabilities</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Long-term Debt</td>
+                    <td>15,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Liabilities</strong></td>
+                    <td><strong>23,000</strong></td>
+                </tr>
+                <tr>
+                    <td>Equity</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Capital Stock</td>
+                    <td>25,000</td>
+                </tr>
+                <tr>
+                    <td>Retained Earnings</td>
+                    <td>10,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Equity</strong></td>
+                    <td><strong>35,000</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Total Liabilities & Equity</strong></td>
+                    <td><strong>77,000</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting Software Used in Business</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Accounting Software Used in Business</h1>
+
+    <section>
+        <h2>1. QuickBooks</h2>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body>
+          <header>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsl380PBNnWpsAMViwW9NnFW6Vu7RJ4t4yMCSXoqQmJSSdd02AT04GDEIMBPN4yxuYrho&usqp=CAU" alt="Website Logo" width="150" height="auto">
+          </header>
+        </body>
+        </html>
+        
+        <p><strong>Overview:</strong> QuickBooks is one of the most popular accounting software tools used by small to medium-sized businesses. It offers cloud-based solutions and desktop versions for businesses to manage their finances easily.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Automatic transaction categorization</li>
+            <li>Invoicing and billing</li>
+            <li>Bank account synchronization</li>
+            <li>Payroll processing</li>
+            <li>Financial reporting (profit and loss, balance sheet, etc.)</li>
+            <li>Multi-currency support</li>
+        </ul>
+        <p><strong>Best For:</strong> Small businesses, freelancers, and startups looking for an easy-to-use and affordable solution for managing financial data.</p>
+    </section>
+
+    <section>
+        <h2>2. Xero</h2>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <img src="data:image/png;base64,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" alt="Website Logo" width="150" height="auto">
+  </header>
+</body>
+</html>
+
+        <p><strong>Overview:</strong> Xero is a cloud-based accounting software that allows small businesses to manage their finances from anywhere. Known for its user-friendly interface, Xero is used for managing cash flow, bank reconciliation, and financial reporting.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Real-time financial data</li>
+            <li>Invoicing and payment tracking</li>
+            <li>Bank reconciliation</li>
+            <li>Payroll management</li>
+            <li>Multi-currency and multi-language support</li>
+            <li>Customizable financial reports</li>
+        </ul>
+        <p><strong>Best For:</strong> Small to medium businesses that prefer cloud-based software and need easy-to-use accounting tools for various financial tasks.</p>
+    </section>
+
+    <section>
+        <h2>3. FreshBooks</h2>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr57uZn7s7N_Ne6EB6SoWiGg7e0mMZGtErfVR_I_u1sI4QC2EPMJgVFXaCQGc849Dsgp4&usqp=CAU" alt="Website Logo" width="150" height="auto">
+  </header>
+</body>
+</html>
+
+        <p><strong>Overview:</strong> FreshBooks is a cloud-based accounting software primarily used for invoicing and time tracking, making it ideal for service-based businesses and freelancers.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Invoice creation and customization</li>
+            <li>Expense tracking</li>
+            <li>Time tracking and project management tools</li>
+            <li>Tax calculations and reports</li>
+            <li>Client and vendor management</li>
+            <li>Mobile app for on-the-go accounting</li>
+        </ul>
+        <p><strong>Best For:</strong> Freelancers, consultants, and small business owners who need efficient invoicing, time tracking, and basic accounting capabilities.</p>
+    </section>
+
+    <section>
+        <h2>4. Sage Accounting</h2>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <img src="data:image/png;base64,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" alt="Website Logo" width="150" height="auto">
+  </header>
+</body>
+</html>
+
+        <p><strong>Overview:</strong> Sage Accounting provides cloud-based and desktop solutions for accounting, offering tools for invoicing, expense tracking, payroll, and financial reporting. Sage is scalable, making it suitable for businesses of different sizes.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Multi-user access with role-based permissions</li>
+            <li>Automated invoicing and payments</li>
+            <li>Bank reconciliation and cash flow management</li>
+            <li>Inventory and project management</li>
+            <li>Detailed financial reports (P&L, balance sheet, etc.)</li>
+            <li>Tax management tools</li>
+        </ul>
+        <p><strong>Best For:</strong> Growing businesses and mid-sized companies that require scalable and customizable accounting solutions for complex operations.</p>
+    </section>
+
+    <section>
+        <h2>5. Wave Accounting</h2>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <img src="https://www.accountsjunction.com/BlogImg/wave-accounting-should-i-do-it-myself.png" alt="Website Logo" width="150" height="auto">
+  </header>
+</body>
+</html>
+
+        <p><strong>Overview:</strong> Wave Accounting is a free, cloud-based accounting software designed for small businesses and freelancers. It provides a comprehensive suite of financial tools without the high costs of premium software.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Free invoicing and billing</li>
+            <li>Expense tracking and management</li>
+            <li>Bank account synchronization</li>
+            <li>Financial reports (profit and loss, balance sheet, etc.)</li>
+            <li>Multi-currency support</li>
+            <li>Payroll management (paid version)</li>
+        </ul>
+        <p><strong>Best For:</strong> Small businesses or startups looking for a free and easy-to-use accounting software for basic financial management.</p>
+    </section>
+
+    <section>
+        <h2>6. Zoho Books</h2>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <img src="https://gottagrow.io/wp-content/uploads/2022/11/Zoho-Books.png" alt="Website Logo" width="250" height="auto">
+  </header>
+</body>
+</html>
+
+        <p><strong>Overview:</strong> Zoho Books is a comprehensive accounting software that helps small businesses manage their finances, track expenses, and create detailed reports. It integrates seamlessly with other Zoho tools for a complete business management solution.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Customizable invoices and estimates</li>
+            <li>Expense and time tracking</li>
+            <li>Automated bank feeds and reconciliation</li>
+            <li>Inventory management</li>
+            <li>Custom financial reports</li>
+            <li>Multi-currency support and recurring invoices</li>
+        </ul>
+        <p><strong>Best For:</strong> Small businesses looking for an affordable accounting solution that integrates with other Zoho products and offers scalability.</p>
+    </section>
+
+    <section>
+        <h2>7. Microsoft Dynamics GP</h2>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <img src="https://www.erpadvisorsgroup.com/hubfs/Microsoft%20Great%20Plains%20Logo.webp" alt="Website Logo" width="200" height="auto">
+  </header>
+</body>
+</html>
+
+        <p><strong>Overview:</strong> Microsoft Dynamics GP (Great Plains) is an enterprise-level accounting solution used by medium to large businesses. It integrates financial management with other business operations, making it suitable for complex financial environments.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Comprehensive financial management (general ledger, accounts payable, accounts receivable)</li>
+            <li>Multi-currency and multi-language support</li>
+            <li>Advanced reporting and analytics</li>
+            <li>Inventory management</li>
+            <li>Payroll and human resource management</li>
+            <li>Customizable modules for various business needs</li>
+        </ul>
+        <p><strong>Best For:</strong> Medium to large enterprises that require a full-featured accounting solution integrated with other business operations.</p>
+    </section>
+
+    <section>
+        <h2>8. NetSuite</h2>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/082012/netsuite.jpg?itok=W_K2exqA" alt="Website Logo" width="150" height="auto">
+  </header>
+</body>
+</html>
+
+        <p><strong>Overview:</strong> NetSuite is a cloud-based enterprise resource planning (ERP) solution with robust accounting features. It offers a suite of financial tools that help manage accounting, financials, inventory, and other business functions.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Comprehensive accounting tools (accounts payable/receivable, general ledger, billing)</li>
+            <li>Financial forecasting and budgeting</li>
+            <li>Multi-currency, multi-tax, and multi-language support</li>
+            <li>Real-time financial and operational reporting</li>
+            <li>Integrated customer relationship management (CRM)</li>
+            <li>Supply chain management</li>
+        </ul>
+        <p><strong>Best For:</strong> Large businesses and enterprises that need a comprehensive cloud-based ERP solution for all aspects of their financial and operational needs.</p>
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uses of Accounting in Daily Life</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Uses of Accounting in Daily Life</h1>
+
+    <section>
+        <h2>1. Personal Budgeting</h2>
+        <p>Accounting is essential in personal budgeting. It helps individuals track their income and expenses, ensuring they live within their means and save for the future.</p>
+        <p><strong>How Accounting Helps in Budgeting:</strong></p>
+        <ul>
+            <li>Tracking daily, weekly, and monthly expenses</li>
+            <li>Identifying areas where spending can be reduced</li>
+            <li>Setting up savings goals</li>
+            <li>Planning for future financial needs like vacations or large purchases</li>
+            <li>Helping in managing debt repayment schedules</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>2. Business Financial Management</h2>
+        <p>For businesses, accounting plays a crucial role in financial management. It helps in the preparation of financial statements, cash flow analysis, and decision-making.</p>
+        <p><strong>How Accounting Helps in Business:</strong></p>
+        <ul>
+            <li>Maintains accurate records of revenue and expenses</li>
+            <li>Helps in tracking profits and losses</li>
+            <li>Provides insights for budgeting and cost control</li>
+            <li>Assists in tax filing and meeting regulatory requirements</li>
+            <li>Supports long-term planning and financial forecasting</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>3. Debt Management</h2>
+        <p>Accounting is key to managing debts effectively. It helps individuals and businesses keep track of their liabilities and develop a strategy to repay them over time.</p>
+        <p><strong>How Accounting Helps in Debt Management:</strong></p>
+        <ul>
+            <li>Tracking outstanding loans and interest payments</li>
+            <li>Setting up payment schedules to avoid late fees</li>
+            <li>Calculating the impact of debt on overall financial health</li>
+            <li>Identifying opportunities to pay off high-interest debts first</li>
+            <li>Planning for new borrowing, if necessary</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>4. Investment Tracking</h2>
+        <p>Whether for personal or business purposes, accounting helps in tracking investments. It ensures that investments are managed properly and yield expected returns.</p>
+        <p><strong>How Accounting Helps in Investment Tracking:</strong></p>
+        <ul>
+            <li>Tracking returns on stocks, bonds, and mutual funds</li>
+            <li>Helping assess the overall performance of the investment portfolio</li>
+            <li>Ensuring that investment decisions align with financial goals</li>
+            <li>Assisting in tax planning related to investment income</li>
+            <li>Providing data for diversifying the investment portfolio</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>5. Tax Planning and Filing</h2>
+        <p>Accounting is vital for accurate tax planning and filing. It ensures that individuals and businesses comply with tax laws and optimize tax savings.</p>
+        <p><strong>How Accounting Helps in Tax Filing:</strong></p>
+        <ul>
+            <li>Tracking income, expenses, and deductions</li>
+            <li>Providing accurate records for tax filings</li>
+            <li>Helping estimate tax liabilities throughout the year</li>
+            <li>Identifying potential tax-saving opportunities like deductions and credits</li>
+            <li>Ensuring compliance with local, state, and federal tax laws</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>6. Retirement Planning</h2>
+        <p>Accounting plays a critical role in planning for retirement by helping individuals calculate their future income needs and how much to save.</p>
+        <p><strong>How Accounting Helps in Retirement Planning:</strong></p>
+        <ul>
+            <li>Calculating current savings and estimating future needs</li>
+            <li>Determining the amount to save for retirement each month or year</li>
+            <li>Tracking retirement fund growth (401(k), IRA, etc.)</li>
+            <li>Managing withdrawals to ensure long-term financial stability</li>
+            <li>Helping in planning for medical expenses in retirement</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>7. Financial Decision Making</h2>
+        <p>In both personal and business contexts, accounting helps individuals and organizations make informed financial decisions that lead to better outcomes.</p>
+        <p><strong>How Accounting Helps in Financial Decision Making:</strong></p>
+        <ul>
+            <li>Providing clear insights into cash flow and financial status</li>
+            <li>Identifying profitable investments and projects</li>
+            <li>Evaluating potential risks and returns</li>
+            <li>Helping to make informed decisions about purchases, savings, or loans</li>
+            <li>Assisting in cost-cutting strategies for businesses</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>8. Record Keeping and Compliance</h2>
+        <p>Accounting ensures proper record-keeping, which is essential for legal compliance and effective financial management in both personal and business finances.</p>
+        <p><strong>How Accounting Helps in Record Keeping:</strong></p>
+        <ul>
+            <li>Maintaining a detailed record of financial transactions</li>
+            <li>Ensuring compliance with accounting standards and regulations</li>
+            <li>Providing an audit trail for financial reviews or investigations</li>
+            <li>Ensuring accurate and timely reporting to regulatory authorities</li>
+            <li>Protecting assets from fraud or mismanagement through proper documentation</li>
+        </ul>
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Accounts</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .t-account {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">T-Accounts</h1>
+
+    <div class="t-account">
+        <h2>Cash</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="color: black;">Debit</th>
+                    <th style="color: black;">Credit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="t-account">
+        <h2>Accounts Receivable</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="color: black;">Debit</th>
+                    <th style="color: black;">Credit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                    <td><input type="text" placeholder="Enter amount"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    function calculateTotal(tableId) {
+        const table = document.getElementById(tableId);
+        const debitInputs = table.querySelectorAll('td:nth-child(1) input');
+        const creditInputs = table.querySelectorAll('td:nth-child(2) input');
+        
+        let debitTotal = 0;
+        let creditTotal = 0;
+
+        debitInputs.forEach(input => debitTotal += parseFloat(input.value || 0));
+        creditInputs.forEach(input => creditTotal += parseFloat(input.value || 0));
+
+        alert(`Debit Total: ${debitTotal}\nCredit Total: ${creditTotal}`);
+    }
+</script>
+<button onclick="calculateTotal('cashTable')">Check Balance</button>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statement of Comprehensive Income</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .total {
+            font-weight: bold;
+            text-align: right;
+        }
+        .amount {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Company Name</h1>
+    <h2>Statement of Comprehensive Income</h2>
+    <h3>For the Year Ended [Date]</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="color: black;">Revenue</th>
+                <th style="color: black;">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sales Revenue</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr>
+                <td>Other Income</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr class="total">
+                <td>Total Revenue</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="color: black;">Expenses</th>
+                <th style="color: black;">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cost of Goods Sold</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr>
+                <td>Administrative Expenses</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr>
+                <td>Other Expenses</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr class="total">
+                <td>Total Expenses</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 style="text-align: center;">Net Profit/Net Loss: <input type="text" placeholder="0.00"></h3>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statement of Financial Position</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .total {
+            font-weight: bold;
+            text-align: right;
+        }
+        .amount {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Company Name</h1>
+    <h2>Statement of Financial Position</h2>
+    <h3>As of [Date]</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="color: black;">Assets</th>
+                <th style="color: black;">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cash and Cash Equivalents</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr>
+                <td>Accounts Receivable</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr>
+                <td>Inventory</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr class="total">
+                <td>Total Current Assets</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="color: black;">Liabilities</th>
+                <th style="color: black;">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Accounts Payable</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr>
+                <td>Accrued Expenses</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr class="total">
+                <td>Total Liabilities</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th style="color: black;">Equity</th>
+                <th style="color: black;">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Share Capital</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr>
+                <td>Retained Earnings</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+            <tr class="total">
+                <td>Total Equity</td>
+                <td class="amount"><input type="text" placeholder="0.00"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 style="text-align: center;">Total Liabilities and Equity: <input type="text" placeholder="0.00"></h3>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <p>If you have any further queries, feel free to email us at:</p>
+    <a href="mailto:muhammadumarfarooqsaeed@gmail.com?subject=Query&body=Hello, I have a query about...">muhammadumarfarooqsaeed@gmail.com</a>
+</body>
+</html>
+<div id="reviewsSection"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .reviews-container {
+      margin-top: 20px;
+    }
+    .review {
+      background-color: #0f0101;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: rgb(5, 0, 0);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Customer Reviews</h1>
+
+  <div>
+    <textarea id="reviewInput" placeholder="Write your review here..."></textarea>
+    <button onclick="addReview()">Submit Review</button>
+  </div>
+
+  <div class="reviews-container" id="reviewsContainer">
+    <h2>All Reviews</h2>
+    <!-- Reviews will be displayed here -->
+  </div>
+
+  <script>
+    function addReview() {
+      // Get the review text
+      const reviewText = document.getElementById('reviewInput').value;
+
+      if (reviewText.trim() === "") {
+        alert("Please write a review before submitting.");
+        return;
+      }
+
+      // Create a new div for the review
+      const reviewDiv = document.createElement('div');
+      reviewDiv.className = 'review';
+      reviewDiv.textContent = reviewText;
+
+      // Add the new review to the reviews container
+      const reviewsContainer = document.getElementById('reviewsContainer');
+      reviewsContainer.appendChild(reviewDiv);
+
+      // Clear the textarea
+      document.getElementById('reviewInput').value = '';
+    }
+  </script>
+</body>
+</html>
+ <section id="contact"></section>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us on Social Media</title>
+<!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* Styling for social media icons */
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    .social-links a {
+        font-size: 40px; /* Adjust size of icons */
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+        color: #0077b5; /* Change color on hover */
+    }
+    /* Optionally, color each icon based on platform */
+    .facebook:hover {
+        color: #3b5998;
+    }
+    .instagram:hover {
+        color: #e4405f;
+    }
+    .twitter:hover {
+        color: #1da1f2;
+    }
+    .linkedin:hover {
+        color: #0077b5;
+    }
+</style>
+</head>
+<body>
+<h1>Contact Us on Social Media</h1>
+<p>Follow us or get in touch with us through these platforms:</p>
+
+<!-- Social Media Icons with Links -->
+<div class="social-links">
+    <!-- Facebook Link -->
+    <a href="https://www.facebook.com/UMAR.99" target="_blank" class="facebook">
+        <i class="fab fa-facebook-square"></i>
+    </a>
+    
+    <!-- Instagram Link -->
+    <a href="https://www.instagram.com/UMARSID543/" target="_blank" class="instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+    
+    <!-- Twitter Link -->
+    <a href="https://twitter.com/UMARSID543" target="_blank" class="twitter">
+        <i class="fab fa-twitter"></i>
+    </a>
+    
+    <!-- LinkedIn Link -->
+    <a href="https://www.linkedin.com/in/umar-sid-741141330" target="_blank" class="linkedin">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
+
+</body>
+<section id="contact"></section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instructor and Developer Info</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .info {
+        font-size: 20px;
+        color: #333;
+    }
+    .instructor {
+        font-weight: bold;
+        color: #007BFF;
+    }
+    .developer {
+        font-weight: bold;
+        color: #28a745;
+    }
+</style>
+</head>
+<body>
+
+<!-- Display the Instructor and Developer Info -->
+<div class="info">
+    <p class="instructor">INSTRUCTOR: SIR TALHA</p>
+    <p class="developer">DEVELOPED BY: M UMAR FAROOQ</p>
+</div>
+
+</body>
+</html>
